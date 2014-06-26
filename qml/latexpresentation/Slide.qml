@@ -66,7 +66,7 @@ Item {
 
     property color slideTextColor: parent.textColor !== undefined ? parent.textColor : "black"
     property string contentFontFamily: parent.fontFamily !== undefined ? parent.fontFamily : "Source Sans Pro"
-    property string titleFontFamily: parent.fontFamily !== undefined ? parent.fontFamily : "Utopia"
+    property string titleFontFamily: parent.fontFamily !== undefined ? parent.fontFamily : "cmr10"
     property int _pointCount: delayedContent.length + bullets.length
 
     function _advance() {
@@ -136,13 +136,13 @@ Item {
     Text {
         id: titleText
         text: title;
-        width: parent.width
+        width: 200
+        scale: 0.8  * parent.width / width
+        font.capitalization: Font.SmallCaps
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: parent._fontSize * 1.0
         font.family: titleFontFamily
-        font.weight: Font.Light
-        font.pixelSize: _titleFontSize
         color: slideTextColor
         horizontalAlignment: Text.Center
         wrapMode: Text.Wrap

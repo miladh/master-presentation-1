@@ -3,7 +3,7 @@ import QtGraphicalEffects 1.0
 Item {
     id: root
     property alias source: image.source
-    property real borderWidth: width * 0.02
+    property real borderWidth: width * 0.005
     property real shadowRadius: width * 0.03
     ShaderEffectSource {
         anchors.fill: parent
@@ -25,7 +25,7 @@ Item {
                 height: image.paintedHeight + borderWidth*2
                 radius: borderWidth / 2
 
-                color: "#ffffff"
+                color: "#000000"
                 z: -1
             }
             Image {

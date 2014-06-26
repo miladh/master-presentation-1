@@ -18,46 +18,42 @@ TransitionPresentation
 
     textColor: "black"
 
-    LinearGradient {
+    RadialGradient {
         anchors.fill: parent
         gradient: Gradient {
-            GradientStop { position: 0.0; color: "#f7fcfd" }
-            GradientStop { position: 1.0; color: "#f7fcf0" }
+            GradientStop { position: 0.0; color: "#FFFFFF" }
+            GradientStop { position: 1.0; color: "#f7f2d3" }
         }
     }
 
-    UpperLeftSlide {
-        id: firstSlide
-        Heading {
-            anchors {
-                verticalCenterOffset: -parent.height * 0.1
-            }
+    Slide {
+        UpperLeftSlide {
+            id: firstSlide
+            Heading {
+                anchors {
+                    verticalCenterOffset: -parent.height * 0.1
+                }
 
-            text: "Bridging Quantum Mechanics\nand Molecular Dynamics\nwith Artificial Neural Networks"
+                text: "Ab Initio Molecular Dyanmics:\nA Virtual Laboratory "
+            }
+            Text {
+                width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: parent.height * 0.05
+                font.family: firstSlide.titleFontFamily
+                font.pixelSize: firstSlide._titleFontSize * 0.5
+                lineHeight: 1.2
+                horizontalAlignment: Text.Center
+                wrapMode: Text.Wrap
+                text: "Milad H. Mobarhan\nUniversity of Oslo, Computational Physics\nJune 2014"
+            }
         }
-        Text {
-            width: parent.width
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: frontPageSupervisorsText.top
-            anchors.bottomMargin: parent.height * 0.05
-            font.family: firstSlide.titleFontFamily
-            font.pixelSize: firstSlide._titleFontSize * 0.5
-            lineHeight: 1.2
-            horizontalAlignment: Text.Center
-            wrapMode: Text.Wrap
-            text: "Svenn-Arne Dragly\nUniversity of Oslo\nJune 2014"
-        }
-        Text {
-            id: frontPageSupervisorsText
-            width: parent.width
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            font.family: firstSlide.titleFontFamily
-            font.pixelSize: firstSlide._titleFontSize * 0.425
-            lineHeight: 1.4
-            horizontalAlignment: Text.Center
-            wrapMode: Text.Wrap
-            text: "Supervisors: Morten Hjorth-Jensen and Anders Malthe-Sørenssen"
+        UpperRightSlide {
+            BorderedImage {
+                anchors.fill: parent
+                source: "../../figures/densityCH5_2.png"
+            }
         }
     }
 
@@ -66,28 +62,126 @@ TransitionPresentation
     // -----------------------------------------------
 
     Slide {
-        id: multiscaleSlide
+        id: physicalDomains
         anchors.fill: parent
         delayedContent: [
             UpperLeftSlide {
-                title: "Quantum Mechanics"
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../images/ch4-electrostatic-potential.png"
-                }
-            },
-            UpperRightSlide {
-                title: "Molecular Dynamics"
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../images/oculusqt3d-5.png"
+                DefaultImage {
+                    source: "../../figures/physicsDomain.png"
                 }
             },
             LowerLeftSlide {
-                centeredText: "energy,\nforce,\nelectron density"
+                id: classical
+                title: "Classical Mechanics"
+                Column {
+                    anchors.centerIn: parent
+
+                    Text{
+                        text: "Newton's Equation:"
+                        font.family: classical.contentFont.family
+                        font.pixelSize: classical.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: classical.height * 0.05
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: classical.width * 0.13
+                        text: "$\\mathbf{F} = m \\mathbf{a}$"
+                    }
+                    Item {
+                        height: classical.height * 0.1
+                        width: 1
+                    }
+                    Text{
+                        text: "N-body problem:"
+                        font.family: classical.contentFont.family
+                        font.pixelSize: classical.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: classical.height * 0.05
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: classical.width * 0.37
+                        text: "$X_{i}(t),\\quad i = 1,2,\\dots,N$"
+                    }
+                }
             },
             LowerRightSlide {
-                centeredText: "temperature,\npressure,\npermeability"
+                id: quantum
+                title: "Quantum Mechanics"
+                Column {
+                    anchors.centerIn: parent
+
+                    Text{
+                        text: "Schrödinger Equation:"
+                        font.family: classical.contentFont.family
+                        font.pixelSize: classical.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: classical.height * 0.05
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: classical.width * 0.25
+                        text: "$i \\hbar \\frac{\\partial}{\\partial t}\\Psi= \\mathcal{H}\\Psi$"
+                    }
+                    Item {
+                        height: classical.height * 0.1
+                        width: 1
+                    }
+                    Text{
+                        text: "N-body problem:"
+                        font.family: classical.contentFont.family
+                        font.pixelSize: classical.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: classical.height * 0.05
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: classical.width * 0.3
+                        text: "$\\Psi(\\mathbf{r}_1,\\mathbf{r}_1,\\dots,\\mathbf{r}_N, t)$"
+                    }
+                }
+            }
+        ]
+    }
+
+
+    // -----------------------------------------------
+    // ---------------Molecular Dynamics--------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Molecular Dynamics"
+                }
+
+            },
+            UpperRightSlide {
+                DefaultImage {
+                    source: "../../figures/MDsvenni.png"
+                }
+            },
+            LowerLeftSlide {
+                DefaultImage {
+                    source: "../../figures/atomTopoint.png"
+                }
+            },
+            LowerRightSlide {
+                DefaultImage {
+                    source: "../../figures/newton.png"
+                }
             }
         ]
     }
@@ -95,15 +189,85 @@ TransitionPresentation
     Slide {
         delayedContent: [
             UpperLeftSlide {
-                title: "Problem"
-                centeredText: "detailed calculations = expensive\nmany atoms = expensive"
-            },
-            LowerLeftSlide {
-                centeredText: "details + many atoms = unaffordable"
+                title: "Molecular Dynamics:"
+                centeredText: "Laws of Interaction"
             },
             UpperRightSlide {
-                title: "Goal"
-                centeredText: "Build a bridge between the two scales\nwith artificial neural networks"
+                id: lawOfInteraction
+                Column {
+                    anchors.centerIn: parent
+
+                    Text{
+                        text: "Potential:"
+                        font.pixelSize: lawOfInteraction.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: lawOfInteraction.height * 0.05
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: lawOfInteraction.width * 0.43
+                        text: "\\begin{align*}
+                                V&= \\sum_k^{N} V_1(\\mathbf{R}_k)
+                                 + \\sum_{k < l}^{N} V_2(\\mathbf{R}_k, \\mathbf{R}_l)\\\\
+                                 &+ \\sum_{k < l < m}^{N} V_3(\\mathbf{R}_k, \\mathbf{R}_l, \\mathbf{R}_m)
+                                 +\\ldots
+                                \\end{align*}"
+                    }
+                    Item {
+                        height: lawOfInteraction.height * 0.1
+                        width: 1
+                    }
+                    Text{
+                        text: "Force:"
+                        font.pixelSize: lawOfInteraction.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: lawOfInteraction.height * 0.05
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: lawOfInteraction.width * 0.15
+                        text: "$\\mathbf{F}= -\\nabla V$"
+                    }
+                }
+
+
+            },
+            LowerLeftSlide {
+                Grid {
+                    columns: 2
+                    anchors.fill: parent
+
+                    DefaultImage {
+                        width: parent.width / 2
+                        height: parent.height / 2
+                        anchors.fill: undefined
+                        source: "../../figures/bondStrech.png"
+                    }
+                    DefaultImage {
+                        width: parent.width / 2
+                        height: parent.height / 2
+                        anchors.fill: undefined
+                        source: "../../figures/angleBend.png"
+                    }
+                    DefaultImage {
+                        width: parent.width / 2
+                        height: parent.height / 2
+                        anchors.fill: undefined
+                        source: "../../figures/coul.png"
+                    }
+                    DefaultImage {
+                        width: parent.width / 2
+                        height: parent.height / 2
+                        anchors.fill: undefined
+                        source: "../../figures/lj.png"
+                    }
+                }
+
             }
         ]
     }
@@ -204,13 +368,8 @@ TransitionPresentation
             }
         }
         UpperRightSlide {
-            Image {
-                anchors.fill: parent
-                anchors.margins: parent.width * 0.1
-                fillMode: Image.PreserveAspectFit
+            DefaultImage {
                 source: "../../images/trimer-ijk.png"
-                antialiasing: true
-                smooth: true
             }
         }
     }
