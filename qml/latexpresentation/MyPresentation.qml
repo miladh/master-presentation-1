@@ -88,7 +88,7 @@ TransitionPresentation
                     Latex {
                         anchors.centerIn: undefined
                         width: classical.width * 0.13
-                        text: "$\\mathbf{F} = m \\mathbf{a}$"
+                        text: "$$\\mathbf{F} = m \\mathbf{a}$$"
                     }
                     Item {
                         height: classical.height * 0.1
@@ -107,7 +107,7 @@ TransitionPresentation
                     Latex {
                         anchors.centerIn: undefined
                         width: classical.width * 0.37
-                        text: "$X_{i}(t),\\quad i = 1,2,\\dots,N$"
+                        text: "$$X_{i}(t),\\quad i = 1,2,\\dots,N$$"
                     }
                 }
             },
@@ -129,7 +129,7 @@ TransitionPresentation
                     Latex {
                         anchors.centerIn: undefined
                         width: classical.width * 0.25
-                        text: "$i \\hbar \\frac{\\partial}{\\partial t}\\Psi= \\mathcal{H}\\Psi$"
+                        text: "$$i \\hbar \\frac{\\partial}{\\partial t}\\Psi= \\mathcal{H}\\Psi$$"
                     }
                     Item {
                         height: classical.height * 0.1
@@ -148,7 +148,7 @@ TransitionPresentation
                     Latex {
                         anchors.centerIn: undefined
                         width: classical.width * 0.3
-                        text: "$\\Psi(\\mathbf{r}_1,\\mathbf{r}_1,\\dots,\\mathbf{r}_N, t)$"
+                        text: "$$\\Psi(\\mathbf{r}_1,\\mathbf{r}_1,\\dots,\\mathbf{r}_N, t)$$"
                     }
                 }
             }
@@ -272,16 +272,331 @@ TransitionPresentation
         ]
     }
 
+    UpperLeftSlide {
+        id: clmd
+        title: "Molecular Dynamics:"
+        centeredText: "Limitations:\n\nQuantum effects\nChallenging task"
+    }
+
+
+    // -----------------------------------------------
+    // -----------  Quantum mechanics- ---------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                title: "Schrödinger Equation"
+                Latex {
+                    width: parent.width * 0.2
+                    text: "$$i \\hbar \\frac{\\partial}{\\partial t}\\Psi= \\mathcal{H}\\Psi$$"
+                }
+            },
+            UpperRightSlide {
+                title: "Hamiltonian"
+                Latex {
+                    width: parent.width * 0.9
+                    text: "$$
+                            \\mathcal{H} = -\\sum_{i}^{N_e} \\frac{\\nabla_i^2 }{2}
+                            - \\sum_{n}^{N_n} \\frac{\\nabla_n^2}{2M_n}
+                            -\\sum_{n}^{N_n}\\sum_{i}^{N_e}\\frac{Z_n}{|{\\bf r}_i - {\\bf R}_n|}
+                            + \\sum_{{i < j}}^{N_e} \\frac{1}{|{\\bf r}_i - {\\bf r}_j|}
+                            -\\sum_{{n < m}}^{N_n} \\frac{Z_n Z_{m}}{|{\\bf R}_n - {\\bf R}_{m}|}
+                            $$"
+                }
+            },
+            LowerRightSlide {
+                title: "Wave Function"
+                Latex {
+                    width: parent.width * 0.2
+                    text: "$$\\Psi\\left(\\{\\mathbf{R}_n\\}, \\{\\mathbf{r}_i\\}, t\\right)$$"
+                }
+            }
+        ]
+    }
+
+
+
+
+    // -----------------------------------------------
+    // -----------  Born-Oppenheimer -----------------
+    // -----------------------------------------------
+
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Born-Oppenheimer\nApproximation"
+                }
+            },
+            LowerLeftSlide {
+                DefaultImage {
+                    source: "../../figures/mass.png"
+                }
+            },
+            UpperRightSlide {
+                id: boa
+                Column {
+                    anchors.centerIn: parent
+
+                    Text{
+                        text: "Separable Wave Function:"
+                        font.pixelSize: boa.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: boa.height * 0.03
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: boa.width * 0.5
+                        text: "$$
+                                \\Psi\\big(\\{\\mathbf{R}_n\\}, \\{\\mathbf{r}_i\\}, t\\big) \\quad \\Rightarrow \\quad
+                                \\begin{array}{l}
+                                \\chi\\big(\\{\\mathbf{R}_n\\}, t\\big)\\\\
+                                \\Psi_{\\mathrm{el}}\\big(\\{\\mathbf{r}_i\\};\\{\\mathbf{R}_n\\}\\big)
+                                \\end{array}
+                                $$"
+                    }
+                    Item {
+                        height: boa.height * 0.05
+                        width: 1
+                    }
+                    Text{
+                        text: "Electronic Schrödinger Equation:"
+                        font.pixelSize: boa.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: boa.height * 0.03
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: boa.width * 0.5
+                        text: "	$$
+                                \\left(-\\sum_{i}^{N_e}
+                                \\frac{\\nabla_i^2}{2}+V_{\\mathrm{Ne}}(\\mathbf{r},\\mathbf{R})\\right)
+                                \\Psi_{\\mathrm{el}} = E_{\\mathrm{Ne}}(\\mathbf{R}) \\Psi_{\\mathrm{el}}
+                                $$"
+                    }
+
+                    Item {
+                        height: boa.height * 0.05
+                        width: 1
+                    }
+                    Text{
+                        text: "Nuclear Schrödinger Equation:"
+                        font.pixelSize: boa.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: boa.height * 0.03
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: boa.width * 0.5
+                        text: "	$$
+                            i \\hbar \\frac{\\partial}{\\partial t} \\chi =
+                            \\left(
+                            - \\sum_{n}^{N_n} \\frac{\\nabla_n^2}{2M_n}
+                            +  E_{\\mathrm{Ne}}(\\mathbf{R})\\right)\\chi
+                            $$"
+                    }
+                }
+
+
+            }
+        ]
+    }
+
+
+
+    // -----------------------------------------------
+    // -----------------BOMD--------------------------
+    // -----------------------------------------------
+
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Born-Oppenheimer\nMolecular dynamics"
+                }
+            },
+            UpperRightSlide {
+                id: bomd
+                Column {
+                    anchors.centerIn: parent
+
+                    Text{
+                        text: "Electrons as Quantum Particles:"
+                        font.pixelSize: bomd.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: bomd.height * 0.03
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: bomd.width * 0.5
+                        text: "$$
+                                \\underbrace{
+                                \\left(-\\sum_{i}^{N_e}
+                                \\frac{\\nabla_i^2}{2}
+                                +V_{\\mathrm{Ne}}(\\mathbf{r},\\mathbf{R})\\right)}_{\\mathcal{H}_{\\mathrm{Ne}}}
+                                \\Psi_{\\mathrm{el}} = E_{\\mathrm{Ne}}(\\mathbf{R}) \\Psi_{\\mathrm{el}}
+                                $$"
+                    }
+                    Item {
+                        height: bomd.height * 0.05
+                        width: 1
+                    }
+                    Text{
+                        text: "Nuclei as Classical Point Particles:"
+                        font.pixelSize: bomd.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: bomd.height * 0.03
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: bomd.width * 0.5
+                        text: "	$$
+                                M_n  \\ddot{\\mathbf{R}}_n = -\\nabla_n
+                                \\underset{\\Psi_{\\mathrm{el},0}}{\\text{min}}
+                                \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
+                                \\right\\}
+                                $$"
+                    }
+                }
+
+
+            },
+
+            LowerRightSlide {
+               Latex{
+                   text: "\\begin{align*}
+                   V_{\\mathrm{CM}}= \\sum_k^{N} V_1(\\mathbf{R}_k)
+                    + \\sum_{k < l}^{N} V_2(\\mathbf{R}_k, \\mathbf{R}_l)
+                    &+ \\sum_{k < l < m}^{N} V_3(\\mathbf{R}_k, \\mathbf{R}_l, \\mathbf{R}_m)
+                    +\\dots
+                   \\\\\\\\ &\\Downarrow \\\\ \\\\
+                   V_{\\mathrm{BOMD}} = -\\nabla_n
+                   \\underset{\\Psi_{\\mathrm{el},0}}{\\text{min}}&
+                   \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
+                   \\right\\}
+                   \\end{align*}"
+               }
+            }
+
+        ]
+    }
+
+
+
+    // -----------------------------------------------
+    // -----------------Variational-------------------
+    // -----------------------------------------------
+
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                title: "Electronic Schrödinger Equation:"
+                Latex {
+                    width: parent.width * 0.5
+                    text: "$$
+                            \\left(-\\sum_{i}^{N_e}
+                            \\frac{\\nabla_i^2}{2}
+                            +V(\\mathbf{r},\\mathbf{R})\\right)
+                            \\Psi = E\\Psi
+                            $$"
+                }
+            },
+            UpperRightSlide {
+                title:  "Variational Principle:"
+                Latex {
+                    width: parent.width * 0.5
+                    text: "$$
+                            \\langle\\Psi|\\mathcal{H}|\\Psi\\rangle
+                            \\ge \\langle\\Psi_{0}|\\mathcal{H}|\\Psi_{0}\\rangle = E_0
+                            $$"
+                }
+            }
+        ]
+    }
+
+
+
+
+    // -----------------------------------------------
+    // -----------------HF----------------------------
+    // -----------------------------------------------
+
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Hartree-Fock"
+                }
+            },
+            UpperRightSlide {
+                title: "Slater Determinant"
+                Latex {
+//                    width: parent.width * 0.2
+                    text: "$$
+                            \\Psi_{0} \\approx \\Psi =
+                            \\frac{1}{\\sqrt{N!}}
+                            \\begin{vmatrix}​
+                            \\psi_{1}(\\mathbf{q}_1)​ & \\psi_{2}(\\mathbf{q}_1)​ & \\cdots &
+                            \\psi_{{N_e}}(\\mathbf{q}_1)​ \\\\
+                            \\psi_{1}(\\mathbf{q}_2)​ & \\psi_{2}(\\mathbf{q}_2)​ & \\cdots &
+                            \\psi_{{N_e}}(\\mathbf{q}_2)​ \\\\
+                            \\vdots & \\vdots & \\ddots & \\vdots \\\\
+                            \\psi_{1}(\\mathbf{q}_{N_e})​ & \\psi_{2}(\\mathbf{q}_{N_e})​ & \\cdots &
+                            \\psi_{{N_e}}(\\mathbf{q}_{N_e})​ \\\\
+                            \\end{vmatrix}​
+                            $$"
+                }
+            },
+            LowerRightSlide {
+                centeredText: "Pauli exclusion principle ✓ \n" +
+                              "Electronic correlations ✗\n"
+            }
+        ]
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // -----------------------------------------------
     // -----------  Molecular dynamics ---------------
     // -----------------------------------------------
 
-    UpperLeftSlide {
-        Heading {
-            text: "Molecular Dynamics"
-        }
-    }
 
     Slide {
         delayedContent: [
