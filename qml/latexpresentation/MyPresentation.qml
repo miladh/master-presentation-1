@@ -26,7 +26,7 @@ TransitionPresentation
         }
     }
 
-    Slide {
+    MultiSlide{
         UpperLeftSlide {
             id: firstSlide
             Heading {
@@ -61,7 +61,7 @@ TransitionPresentation
     // --------------- Introduction ------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         id: physicalDomains
         anchors.fill: parent
         delayedContent: [
@@ -160,7 +160,7 @@ TransitionPresentation
     // ---------------Molecular Dynamics--------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -186,7 +186,7 @@ TransitionPresentation
         ]
     }
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 title: "Molecular Dynamics:"
@@ -283,7 +283,7 @@ TransitionPresentation
     // -----------  Quantum mechanics- ---------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 title: "Schrödinger Equation"
@@ -323,7 +323,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -419,7 +419,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -504,7 +504,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -526,7 +526,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         UpperLeftSlide {
             Heading {
                 text: "Born-Oppenheimer\nMolecular Dynamics"
@@ -608,7 +608,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 title: "Electronic Schrödinger Equation:"
@@ -643,7 +643,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -677,7 +677,7 @@ TransitionPresentation
 
 
 
-    Slide {
+    MultiSlide{
         UpperLeftSlide {
             Heading {
                 text: "Hartree-Fock"
@@ -709,7 +709,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -730,7 +730,7 @@ TransitionPresentation
     // -----------------------------------------------
 
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -767,7 +767,7 @@ TransitionPresentation
     // ----------- Spatial Orbitals-------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         UpperLeftSlide {
             Heading {
                 text: "Spin Orbitals"
@@ -798,7 +798,7 @@ TransitionPresentation
     // ----------- basis-------------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 centeredText: "Which basis set to use?"
@@ -823,7 +823,7 @@ TransitionPresentation
     // ----------- GTOs-------------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -860,7 +860,7 @@ TransitionPresentation
     // ----------- Recap-------------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 centeredText: "Recap"
@@ -967,7 +967,7 @@ TransitionPresentation
     // ----------- Implementations--------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -990,7 +990,7 @@ TransitionPresentation
     // ----------- Graphical Models-------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -1024,7 +1024,7 @@ TransitionPresentation
     // ----------- Electrostatic potential-----------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {
@@ -1052,7 +1052,7 @@ TransitionPresentation
     // -----------Reaction----------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 centeredText: "An application of\nBorn-Oppenheimer\n molecular dynamics"
@@ -1071,7 +1071,7 @@ TransitionPresentation
     // -----------------------------------------------
     // -----------Video-------------------------------
     // -----------------------------------------------
-    Slide {
+    MultiSlide{
         UpperLeftSlide {
             title: "Nucleophilic Substitution Reaction"
         }
@@ -1136,7 +1136,7 @@ TransitionPresentation
     // -----------EP reaction-------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 title: "Negative Electrostatic Potential"
@@ -1160,7 +1160,7 @@ TransitionPresentation
     // -----------Basis Effect------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 centeredText:  "The effect of basis set"
@@ -1190,7 +1190,7 @@ TransitionPresentation
     // -----------Future work-------------------------
     // -----------------------------------------------
 
-    Slide {
+    MultiSlide{
         delayedContent: [
             UpperLeftSlide {
                 Heading {

@@ -33,7 +33,8 @@ OTHER_FILES += \
     qml/latexpresentation/UpperLeftSlide.qml \
     qml/latexpresentation/UpperRightSlide.qml \
     qml/latexpresentation/formula.tex \
-    qml/latexpresentation/DefaultImage.qml
+    qml/latexpresentation/DefaultImage.qml \
+    qml/latexpresentation/MultiSlide.qml
 
 copydata.commands = $(COPY_DIR) $$PWD/qml $$PWD/videos $$PWD/figures $$OUT_PWD
 first.depends = $(first) copydata
