@@ -77,7 +77,7 @@ TransitionPresentation
                     anchors.centerIn: parent
 
                     Text{
-                        text: "Newton's Equation:"
+                        text: "Newton's equation:"
                         font.family: classical.contentFont.family
                         font.pixelSize: classical.contentFont.pixelSize * 0.6
                     }
@@ -118,7 +118,7 @@ TransitionPresentation
                     anchors.centerIn: parent
 
                     Text{
-                        text: "Schrödinger Equation:"
+                        text: "Schrödinger equation:"
                         font.family: classical.contentFont.family
                         font.pixelSize: classical.contentFont.pixelSize * 0.6
                     }
@@ -341,7 +341,7 @@ TransitionPresentation
                     anchors.centerIn: parent
 
                     Text{
-                        text: "Separable Wave Function:"
+                        text: "Separable wave function:"
                         font.pixelSize: boa.contentFont.pixelSize * 0.6
                     }
                     Item {
@@ -364,7 +364,7 @@ TransitionPresentation
                         width: 1
                     }
                     Text{
-                        text: "Electronic Schrödinger Equation:"
+                        text: "Electronic Schrödinger equation:"
                         font.pixelSize: boa.contentFont.pixelSize * 0.6
                     }
                     Item {
@@ -387,7 +387,7 @@ TransitionPresentation
                         width: 1
                     }
                     Text{
-                        text: "Nuclear Schrödinger Equation:"
+                        text: "Nuclear Schrödinger equation:"
                         font.pixelSize: boa.contentFont.pixelSize * 0.6
                     }
                     Item {
@@ -423,7 +423,7 @@ TransitionPresentation
         delayedContent: [
             UpperLeftSlide {
                 Heading {
-                    text: "Born-Oppenheimer\nMolecular dynamics"
+                    text: "Born-Oppenheimer\nMolecular Dynamics"
                 }
             },
             UpperRightSlide {
@@ -432,7 +432,7 @@ TransitionPresentation
                     anchors.centerIn: parent
 
                     Text{
-                        text: "Electrons as Quantum Particles:"
+                        text: "Electrons as quantum particles:"
                         font.pixelSize: bomd.contentFont.pixelSize * 0.6
                     }
                     Item {
@@ -455,7 +455,7 @@ TransitionPresentation
                         width: 1
                     }
                     Text{
-                        text: "Nuclei as Classical Point Particles:"
+                        text: "Nuclei as classical point particles:"
                         font.pixelSize: bomd.contentFont.pixelSize * 0.6
                     }
                     Item {
@@ -479,8 +479,8 @@ TransitionPresentation
             },
 
             LowerRightSlide {
-               Latex{
-                   text: "\\begin{align*}
+                Latex{
+                    text: "\\begin{align*}
                    V_{\\mathrm{CM}}= \\sum_k^{N} V_1(\\mathbf{R}_k)
                     + \\sum_{k < l}^{N} V_2(\\mathbf{R}_k, \\mathbf{R}_l)
                     &+ \\sum_{k < l < m}^{N} V_3(\\mathbf{R}_k, \\mathbf{R}_l, \\mathbf{R}_m)
@@ -491,10 +491,114 @@ TransitionPresentation
                    \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
                    \\right\\}
                    \\end{align*}"
-               }
+                }
             }
 
         ]
+    }
+
+
+
+    // -----------------------------------------------
+    // -----------------aimd--------------------------
+    // -----------------------------------------------
+
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Ab Initio\nMolecular Dynamics"
+                }
+            },
+            UpperRightSlide {
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/aimd.png"
+                }
+            }
+        ]
+    }
+
+
+    // -----------------------------------------------
+    // -----------------BOMD Repeate-----------------
+    // -----------------------------------------------
+
+
+    Slide {
+            UpperLeftSlide {
+                Heading {
+                    text: "Born-Oppenheimer\nMolecular Dynamics"
+                }
+            }
+            UpperRightSlide {
+                id: bomd2
+                Column {
+                    anchors.centerIn: parent
+
+                    Text{
+                        text: "Electrons as quantum particles:"
+                        font.pixelSize: bomd2.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: bomd2.height * 0.03
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: bomd2.width * 0.5
+                        text: "$$
+                                \\underbrace{
+                                \\left(-\\sum_{i}^{N_e}
+                                \\frac{\\nabla_i^2}{2}
+                                +V_{\\mathrm{Ne}}(\\mathbf{r},\\mathbf{R})\\right)}_{\\mathcal{H}_{\\mathrm{Ne}}}
+                                \\Psi_{\\mathrm{el}} = E_{\\mathrm{Ne}}(\\mathbf{R}) \\Psi_{\\mathrm{el}}
+                                $$"
+                    }
+                    Item {
+                        height: bomd2.height * 0.05
+                        width: 1
+                    }
+                    Text{
+                        text: "Nuclei as classical point particles:"
+                        font.pixelSize: bomd2.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: bomd2.height * 0.03
+                        width: 1
+                    }
+
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: bomd2.width * 0.5
+                        text: "	$$
+                                M_n  \\ddot{\\mathbf{R}}_n = -\\nabla_n
+                                \\underset{\\Psi_{\\mathrm{el},0}}{\\text{min}}
+                                \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
+                                \\right\\}
+                                $$"
+                    }
+                }
+
+
+            }
+
+            LowerRightSlide {
+                Latex{
+                    text: "\\begin{align*}
+                   V_{\\mathrm{CM}}= \\sum_k^{N} V_1(\\mathbf{R}_k)
+                    + \\sum_{k < l}^{N} V_2(\\mathbf{R}_k, \\mathbf{R}_l)
+                    &+ \\sum_{k < l < m}^{N} V_3(\\mathbf{R}_k, \\mathbf{R}_l, \\mathbf{R}_m)
+                    +\\dots
+                   \\\\\\\\ &\\Downarrow \\\\ \\\\
+                   V_{\\mathrm{BOMD}} = -\\nabla_n
+                   \\underset{\\Psi_{\\mathrm{el},0}}{\\text{min}}&
+                   \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
+                   \\right\\}
+                   \\end{align*}"
+                }
+            }
     }
 
 
@@ -549,7 +653,6 @@ TransitionPresentation
             UpperRightSlide {
                 title: "Slater Determinant"
                 Latex {
-//                    width: parent.width * 0.2
                     text: "$$
                             \\Psi_{0} \\approx \\Psi =
                             \\frac{1}{\\sqrt{N!}}
@@ -574,472 +677,446 @@ TransitionPresentation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Slide {
+        UpperLeftSlide {
+            Heading {
+                text: "Hartree-Fock"
+            }
+        }
+        delayedContent: [
+            UpperRightSlide {
+                title: "Fock Operator"
+                Latex {
+                    text: "\\begin{align*}
+                            \\mathcal{F}&= -\\frac{1}{2} \\nabla^2
+                            - \\sum_{n=1}^{N_n} \\frac{Z_n}{|\\mathbf{r} - \\mathbf{R}_n|}
+                            + V^{\\mathrm{HF}},\\\\
+                            V^{\\mathrm{HF}} \\psi_k(\\mathbf{q})
+                            &=\\sum_l\\left[ \\int \\frac{\\psi_l^*(\\mathbf{q}') \\psi_l(\\mathbf{q}')}{|{\\bf r} - {\\bf r}'|}
+                            \\mathrm{d} \\mathbf{q}' \\; \\psi_k(\\mathbf{q})
+                            -\\int \\frac{\\psi_l^*(\\mathbf{q}') \\psi_k(\\mathbf{q}')}{|{\\bf r} - {\\bf r}'|}
+                            \\mathrm{d} \\mathbf{q}' \\; \\psi_l(\\mathbf{q})\\right]
+                           \\end{align*}"
+                }
+            }
+        ]
+    }
 
 
 
     // -----------------------------------------------
-    // -----------  Molecular dynamics ---------------
+    // ----------- Spin Orbitals----------------------
     // -----------------------------------------------
 
 
     Slide {
         delayedContent: [
             UpperLeftSlide {
-                title: "Molecular Dynamics"
-                centeredText: "Classical potentials\nand newtonian mechanics"
+                Heading {
+                    text: "Spin Orbitals"
+                }
             },
-            LowerLeftSlide {
-                centeredText: "Particles defined by position, velocity and type.\n" +
-                              "Step-wise time-integration.\n" +
-                              "Forces from potential:"
+            UpperRightSlide {
+                DefaultImage {
+                    source: "../../figures/wavefunction.png"
+                }
+            }
+        ]
+    }
+
+
+    // -----------------------------------------------
+    // ----------------------LCAO---------------------
+    // -----------------------------------------------
+
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Linear Combination\nofAtomic Orbitals"
+                }
+            },
+            UpperRightSlide {
+                BorderedImage {
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        bottom: h2omoTitle.top
+                        top: parent.top
+                    }
+                    source: "../../figures/mo_h2o.png"
+                }
                 Latex {
+                    id: h2omoTitle
                     anchors {
                         bottom: parent.bottom
-                        bottomMargin: parent.height * 0.1
-                        horizontalCenter: parent.horizontalCenter
                         centerIn: undefined
+                        horizontalCenter: parent.horizontalCenter
                     }
-                    width: parent.width * 0.2
-                    text: "$$F = -\\nabla V$$"
-                }
-            },
-            UpperRightSlide {
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../images/emdee-5.png"
+                    width: parent.width * 0.1
+                    text: "H$_2$O"
                 }
             }
         ]
     }
 
-    UpperLeftSlide {
-        title: "Classical Potentials"
-        Latex {
-            text: "$$V(\\mathbf{r}) " +
-                  " = \\sum_{i} V_{1}(\\mathbf{r}_{i})" +
-                  " + \\sum_{i<j} V_{2}(\\mathbf{r}_{i}, \\mathbf{r}_{j})" +
-                  " + \\sum_{i<j<k} V_{3}(\\mathbf{r}_{i}, \\mathbf{r}_{j}, \\mathbf{r}_{k})$$"
-        }
-    }
 
-    UpperLeftSlide {
-        title: "How Do We Define a Potential?"
-        centeredText: "From experiments\nand/or quantum mechanics"
-    }
 
-    Slide {
-        delayedContent: [
-            UpperLeftSlide {
-                title: "Two-Body Terms"
-                Latex {
-                    width: parent.width * 0.5
-                    text: "$$ V_{2}(\\mathbf{r}_{i}, \\mathbf{r}_{j})" +
-                          " = V_{2}(r_{ij})$$"
-                }
-            },
-            Item {
-                anchors.fill: parent
-                UpperRightSlide {
-                    title: "Lennard-Jones"
-                    Latex {
-                        width: parent.width * 0.5
-                        text: "$$V_{\\mathrm{LJ}}(r)" +
-                              " = 4\\epsilon \\left ( \\frac{\\sigma^{12}}{r^{12}} - \\frac{\\sigma^{6}}{r^{6}} \\right)$$"
-                    }
-                }
-                LowerRightSlide {
-                    BorderedImage {
-                        anchors.fill: parent
-                        source: "../../images/lennard-jones.png"
-                    }
-                }
-            }
-        ]
-    }
+    // -----------------------------------------------
+    // ----------- Spatial Orbitals-------------------
+    // -----------------------------------------------
 
     Slide {
         UpperLeftSlide {
-            title: "Three-Body Terms"
-            Latex {
-                width: parent.width * 0.7
-                text: "$$ V_{3}(\\mathbf{r}_{i}, \\mathbf{r}_{j}, \\mathbf{r}_{k})" +
-                      " = V_{3}(r_{ij}, r_{ik}, \\theta_{jik})$$"
+            Heading {
+                text: "Spin Orbitals"
             }
         }
-        UpperRightSlide {
-            DefaultImage {
-                source: "../../images/trimer-ijk.png"
-            }
-        }
-    }
-
-    UpperLeftSlide {
-        title: "Does It Make Sense?"
-        centeredText: "Are the results reasonable?"
-    }
-
-    Slide {
         delayedContent: [
-            UpperLeftSlide {
-                title: "Test Case: Argon Crystallization"
-                centeredText: "Boiling argon\ncooled slowly"
-            },
-            Item {
-                anchors.fill: parent
-                LowerRightSlide {
-                    BorderedImage {
-                        anchors.fill: parent
-                        source: "../../images/argon-crystallization-energy-pressure.png"
-                    }
+            UpperRightSlide {
+                DefaultImage {
+                    source: "../../figures/wavefunction.png"
                 }
-                UpperRightSlide {
-                    centeredText: "Phase change at about 90K.\n" +
-                                  "True boiling point: 87K.\n" +
-                                  "True melting point: 84K."
-                }
-            },
+            }
+        ]
             LowerLeftSlide {
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../images/argon-crystallization-focus-blur.png"
+                Heading {
+                    text: "Spatial Orbitals"
                 }
             }
-        ]
+            LowerRightSlide {
+                DefaultImage {
+                    source: "../../figures/mo_ao.png"
+                }
+            }
     }
+
+
 
     // -----------------------------------------------
-    // ------- Computational Quantum Mechanics -------
+    // ----------- basis-------------------------------
     // -----------------------------------------------
-
-    UpperLeftSlide {
-        Heading {
-            text: "Computational\nQuantum Mechanics"
-        }
-    }
-
-    UpperLeftSlide {
-        title: "Assumptions"
-        delayPoints: true
-        bullets: ["Born-Oppenheimer: classical nuclei",
-            "Slater determinant: only exchange correlations"]
-    }
-
-    UpperLeftSlide {
-        title: "Born-Oppenheimer"
-        bullets: ["Nuclei are treated classically",
-            "Assumes ground state",
-            "Coarse, but good approximation"]
-    }
-
-    UpperLeftSlide {
-        title: "Hartree-Fock Method"
-        centeredText: "Slater determinant, single-particle wave functions"
-    }
-
-    UpperLeftSlide {
-        title: "Hartree-Fock Method"
-        centeredText: "Mean field approximation"
-    }
 
     Slide {
         delayedContent: [
-            UpperLeftSlide {
-                title: "Electron Density"
-                centeredText: "Live!"
-            },
-            Item {
-                anchors.fill: parent
-                UpperRightSlide {
-                    BorderedImage {
-                        anchors {
-                            left: parent.left
-                            right: parent.right
-                            bottom: h2oTitle2.top
-                            top: parent.top
-                        }
-                        source: "../../images/highcontrast.png"
-                    }
-                    Latex {
-                        id: h2oTitle2
-                        anchors {
-                            bottom: parent.bottom
-                            centerIn: undefined
-                            horizontalCenter: parent.horizontalCenter
-                        }
-                        width: parent.width * 0.1
-                        text: "H$_2$O"
-                    }
-                }
-                LowerLeftSlide {
-                    BorderedImage {
-                        anchors {
-                            left: parent.left
-                            right: parent.right
-                            bottom: nh3Title2.top
-                            top: parent.top
-                        }
-                        source: "../../images/nh3-orbital5-cropped.png"
-                    }
-                    Latex {
-                        id: nh3Title2
-                        anchors {
-                            bottom: parent.bottom
-                            centerIn: undefined
-                            horizontalCenter: parent.horizontalCenter
-                        }
-                        width: parent.width * 0.1
-                        text: "NH$_3$"
-                    }
-                }
-                LowerRightSlide {
-                    BorderedImage {
-                        anchors {
-                            left: parent.left
-                            right: parent.right
-                            bottom: o2Title2.top
-                            top: parent.top
-                        }
-                        source: "../../images/o2-orbital-15-high-contrast-cropped.png"
-                    }
-                    Latex {
-                        id: o2Title2
-                        anchors {
-                            bottom: parent.bottom
-                            centerIn: undefined
-                            horizontalCenter: parent.horizontalCenter
-                        }
-                        width: parent.width * 0.07
-                        text: "O$_2$"
-                    }
-                }
-            }
-        ]
-    }
-
-    Slide {
         UpperLeftSlide {
-            title: "Electrostatic Potential"
-            centeredText: "Shows electro- and nucleophilic areas"
-        }
-        UpperRightSlide {
-            BorderedImage {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    bottom: h2oTitle.top
-                    top: parent.top
+            centeredText: "Which basis set to use?"
+        },
+            UpperRightSlide {
+                Latex {
+                    text: "\\begin{equation*}
+                            \\int \\varphi_p^*(\\mathbf{r})O(\\mathbf{r})\\varphi_q(\\mathbf{r}) \\dif \\mathbf{r}
+                            \\end{equation*}
+                            \\begin{equation*}
+                            \\int \\varphi_{p}^*(\\mathbf{r})\\varphi_{r}^*(\\mathbf{r}') \\; \\frac{1}{|{\\bf r} - {\\bf
+                            r}'|} \\; \\varphi_{q}(\\mathbf{r}) \\varphi_{s}(\\mathbf{r}') \\dif
+                            \\mathbf{r}\\dif\\mathbf{r}'
+                            \\end{equation*}"
                 }
-                source: "../../images/h2o-electrostatic-potential-bearboat-3-cropped.png"
             }
-            Latex {
-                id: h2oTitle
-                anchors {
-                    bottom: parent.bottom
-                    centerIn: undefined
-                    horizontalCenter: parent.horizontalCenter
-                }
-                width: parent.width * 0.1
-                text: "H$_2$O"
-            }
-        }
-        LowerLeftSlide {
-            BorderedImage {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    bottom: ch4Title.top
-                    top: parent.top
-                }
-
-                source: "../../images/ch4-electrostatic-potential-2.png"
-            }
-            Latex {
-                id: ch4Title
-                anchors {
-                    bottom: parent.bottom
-                    centerIn: undefined
-                    horizontalCenter: parent.horizontalCenter
-                }
-                width: parent.width * 0.1
-                text: "CH$_4$"
-            }
-        }
-        LowerRightSlide {
-            BorderedImage {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    bottom: nh3Title.top
-                    top: parent.top
-                }
-                source: "../../images/nh3-electrostatic-potential.png"
-            }
-            Latex {
-                id: nh3Title
-                anchors {
-                    bottom: parent.bottom
-                    centerIn: undefined
-                    horizontalCenter: parent.horizontalCenter
-                }
-                width: parent.width * 0.1
-                text: "NH$_3$"
-            }
-        }
+        ]
     }
 
-    UpperLeftSlide {
-        title: "Path to Molecular Dynamics"
-        centeredText: "Energy to potential energy"
-    }
 
     // -----------------------------------------------
-    // --------------- Neural networks ---------------
+    // ----------- GTOs-------------------------------
     // -----------------------------------------------
-
-
-    UpperLeftSlide {
-        Heading {
-            text: "Artificial\nNeural Networks"
-        }
-    }
 
     Slide {
         delayedContent: [
             UpperLeftSlide {
-                title: "Neural Network"
-                centeredText: "Connected neurons"
-            },
-            LowerLeftSlide {
-                Image {
-                    anchors.fill: parent
-                    source: "../../images/network.png"
-                    fillMode: Image.PreserveAspectFit
-                    antialiasing: true
-                    smooth: true
+                Heading {
+                    text: "Gaussian Type Orbitals"
                 }
             },
             UpperRightSlide {
-                title: "Neuron"
                 Latex {
-                    width: parent.width * 0.5
-                    text: "$$y(\\mathbf{x}) = g \\left ( \\sum_{i=1}^{n} w_{i} x_{i} \\right )$$"
+                    text: "\\begin{align*}
+                            \\varphi^{\\mathrm{GTO}}_{ijk} (\\mathbf{r})
+                            &=  x^i y^j z^k \\exp(-\\alpha r^2)\\\\
+                            &=\\varphi^{\\mathrm{GTO}}_{i}(x)
+                            \\varphi^{\\mathrm{GTO}}_{j}(y)
+                            \\varphi^{\\mathrm{GTO}}_{k}(z) ,\\\\
+                            \\varphi^{\\mathrm{GTO}}_{i}(x) &= x^i \\exp(-\\alpha x^2)
+                            \\end{align*}"
+                }
+            },
+            LowerLeftSlide {
+                DefaultImage {
+                    source: "../../figures/gaussProd.png"
                 }
             },
             LowerRightSlide {
-                Image {
-                    anchors.fill: parent
-                    source: "../../images/neuron.png"
-                    fillMode: Image.PreserveAspectFit
-                    antialiasing: true
-                    smooth: true
+                Heading {
+                    text: "McMurchie-Davidson Scheme"
                 }
             }
         ]
     }
 
+
+    // -----------------------------------------------
+    // ----------- Recap-------------------------------
+    // -----------------------------------------------
+
     Slide {
         delayedContent: [
             UpperLeftSlide {
-                title: "Training"
-                centeredText: "Backpropagation"
+                centeredText: "Recap"
             },
             UpperRightSlide {
-                Image {
-                    anchors.fill: parent
-                    source: "../../images/split-neuron.png"
-                    fillMode: Image.PreserveAspectFit
-                    antialiasing: true
-                    smooth: true
+                    id: bomd1
+                    title: "Ab Initio Molecular Dynamics"
+                    Column {
+                        anchors.centerIn: parent
+
+                        Text{
+                            text: "Electrons as quantum particles:"
+                            font.pixelSize: bomd1.contentFont.pixelSize * 0.6
+                        }
+                        Item {
+                            height: bomd1.height * 0.03
+                            width: 1
+                        }
+                        Latex {
+                            anchors.centerIn: undefined
+                            width: bomd1.width * 0.5
+                            text: "$$\\underbrace{
+                                \\left(-\\sum_{i}^{N_e}
+                                \\frac{\\nabla_i^2}{2}
+                                +V(\\mathbf{r},\\mathbf{R})\\right)}_{\\mathcal{H}}
+                                \\Psi = E\\Psi
+                                $$"
+                        }
+                        Item {
+                            height: bomd1.height * 0.05
+                            width: 1
+                        }
+                        Text{
+                            text: "Nuclei as classical point particles:"
+                            font.pixelSize: bomd1.contentFont.pixelSize * 0.6
+                        }
+                        Item {
+                            height: bomd1.height * 0.03
+                            width: 1
+                        }
+
+                        Latex {
+                            anchors.centerIn: undefined
+                            width: bomd1.width * 0.5
+                            text: "	$$
+                                    M_n  \\ddot{\\mathbf{R}}_n = -\\nabla_n
+                                    \\underset{\\Psi_{0}}{\\text{min}}
+                                    \\left\\{\\langle{\\Psi_{0}}|\\mathcal{H}|\\Psi_{0}\\rangle
+                                    \\right\\}
+                                    $$"
+                        }
+                    }
+
+            },
+            LowerLeftSlide {
+                title: "Hartree-Fock"
+                Latex {
+                    text: "$$
+                            \\Psi_{0} \\approx \\Psi =
+                            \\frac{1}{\\sqrt{N!}}
+                            \\begin{vmatrix}​
+                            \\psi_{1}(\\mathbf{q}_1)​ & \\psi_{2}(\\mathbf{q}_1)​ & \\cdots &
+                            \\psi_{{N_e}}(\\mathbf{q}_1)​ \\\\
+                            \\psi_{1}(\\mathbf{q}_2)​ & \\psi_{2}(\\mathbf{q}_2)​ & \\cdots &
+                            \\psi_{{N_e}}(\\mathbf{q}_2)​ \\\\
+                            \\vdots & \\vdots & \\ddots & \\vdots \\\\
+                            \\psi_{1}(\\mathbf{q}_{N_e})​ & \\psi_{2}(\\mathbf{q}_{N_e})​ & \\cdots &
+                            \\psi_{{N_e}}(\\mathbf{q}_{N_e})​ \\\\
+                            \\end{vmatrix}​\\\\
+                            \\begin{align*}
+                            \\mathcal{F}&= -\\frac{1}{2} \\nabla^2
+                            - \\sum_{n=1}^{N_n} \\frac{Z_n}{|\\mathbf{r} - \\mathbf{R}_n|}
+                            + V^{\\mathrm{HF}}
+                           \\end{align*}
+                            $$"
                 }
+            },
+            LowerRightSlide {
+                Grid {
+                    rows: 2
+                    anchors.fill: parent
+
+                    DefaultImage {
+                        width: parent.width
+                        height: parent.height / 2.0
+                        anchors.fill: undefined
+                        source: "../../figures/wavefunction.png"
+                    }
+                    DefaultImage {
+                        width: parent.width
+                        height: parent.height / 3.0
+                        anchors.fill: undefined
+                        source: "../../figures/mo_ao.png"
+                    }
+                }
+
             }
         ]
     }
 
-    UpperLeftSlide {
-        title: "Approximating potentials"
-        centeredText: "Show images!"
-    }
 
-    UpperLeftSlide {
-        title: "Results in Hydrogen Molecules"
-        centeredText: "Show images!"
-    }
-
-    UpperLeftSlide {
-        title: "Hydrogen Dissociation"
-        centeredText: "Show results!"
-    }
-
-    UpperLeftSlide {
-        title: "Future Possibilities"
-        centeredText: "Better quantum, better neural"
-    }
 
     // -----------------------------------------------
-    // ---------------- Visualization ----------------
+    // ----------- Implementations--------------------
     // -----------------------------------------------
-
-    UpperLeftSlide {
-        Heading {
-            text: "Visualization"
-        }
-    }
-
-    Slide {
-        UpperLeftSlide {
-            title: "Volume Rendering of Density"
-            centeredText: "Rays are traced through a cube of volume data.\n"+
-                          "Values of the data are accumulated and define the intensity and color of a pixel."
-        }
-        UpperRightSlide {
-            BorderedImage {
-                anchors.fill: parent
-                source: "../../images/raytracing.png"
-            }
-        }
-    }
 
     Slide {
         delayedContent: [
             UpperLeftSlide {
-                title: "Millions of Atoms"
-                centeredText: "Live demo!"
+                Heading {
+                    text: "Implementations"
+                }
+            },
+            UpperRightSlide {
+                centeredText: "Hartree-Fock code based on McMurchie-Davidson scheme\n\n"+
+                              "Born-Oppenheimer molecular dynamics code based on Hartree-Fock calculations"
+            },
+            LowerRightSlide {
+                centeredText: "Numerous verification tests:\n\n"+
+                              "Unit tests, benchmarking"
+            }
+        ]
+    }
+
+
+    // -----------------------------------------------
+    // ----------- Graphical Models-------------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Graphical Models"
+                }
+
             },
             UpperRightSlide {
                 BorderedImage {
                     anchors.fill: parent
-                    source: "../../images/oculusqt3d-3.png"
+                    source: "../../figures/benzene.png"
+                }
+            },
+            LowerLeftSlide {
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/ions.png"
+                }
+            },
+            LowerRightSlide {
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/boron.png"
                 }
             }
         ]
     }
 
-    UpperLeftSlide {
-        title: "Virtual Reality"
-        centeredText: "Live demo!"
+
+    // -----------------------------------------------
+    // ----------- Electrostatic potential-----------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Electrostatic Potential"
+                }
+
+            },
+            UpperRightSlide {
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/epBenzene.png"
+                }
+            },
+            LowerRightSlide {
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/dimer.png"
+                }
+            }
+        ]
     }
 
-    UpperLeftSlide {
+
+    // -----------------------------------------------
+    // -----------Reaction----------------------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                centeredText: "An application of\nBorn-Oppenheimer\n molecular dynamics"
+            },
+            UpperRightSlide {
+                title: "Nucleophilic Substitution Reaction"
+                DefaultImage {
+                    source: "../../figures/reactionDiagram.png"
+                }
+            }
+        ]
     }
+
+
+
+    // -----------------------------------------------
+    // -----------Future work-------------------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                Heading {
+                    text: "Future Prospects"
+                }
+            },
+            UpperRightSlide {
+                centeredText: "Hartree-Fock + Quantum Monte Carlo"
+            },
+            LowerLeftSlide {
+                centeredText: "McMurchie-Davidson scheme\n+\nCar-Parrinello\n\n"+
+                              "McMurchie-Davidson scheme\n+\nDensity functional theory"
+            },
+            LowerRightSlide {
+                centeredText: "Potential parameterizations"
+            }
+        ]
+    }
+
+
+    // -----------------------------------------------
+    // -----------Thanks------------------------------
+    // -----------------------------------------------
+
+    UpperLeftSlide {
+        centeredText: "Thank you for your attention!"
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
-// TODO: Check thesis for more bullets!
 
 
