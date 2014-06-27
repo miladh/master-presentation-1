@@ -8,6 +8,7 @@ SOURCES += main.cpp \
 HEADERS += \
     latexrunner.h
 
+#render1$ avconv -r 12 -i image%8d.png -c libx264 aout.mp4
 
 #RESOURCES += qml.qrc
 
@@ -34,7 +35,7 @@ OTHER_FILES += \
     qml/latexpresentation/formula.tex \
     qml/latexpresentation/DefaultImage.qml
 
-copydata.commands = $(COPY_DIR) $$PWD/qml $$PWD/images $$PWD/figures $$OUT_PWD
+copydata.commands = $(COPY_DIR) $$PWD/qml $$PWD/videos $$PWD/figures $$OUT_PWD
 first.depends = $(first) copydata
 export(first.depends)
 export(copydata.commands)

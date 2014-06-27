@@ -527,66 +527,66 @@ TransitionPresentation
 
 
     Slide {
-            UpperLeftSlide {
-                Heading {
-                    text: "Born-Oppenheimer\nMolecular Dynamics"
-                }
+        UpperLeftSlide {
+            Heading {
+                text: "Born-Oppenheimer\nMolecular Dynamics"
             }
-            UpperRightSlide {
-                id: bomd2
-                Column {
-                    anchors.centerIn: parent
+        }
+        UpperRightSlide {
+            id: bomd2
+            Column {
+                anchors.centerIn: parent
 
-                    Text{
-                        text: "Electrons as quantum particles:"
-                        font.pixelSize: bomd2.contentFont.pixelSize * 0.6
-                    }
-                    Item {
-                        height: bomd2.height * 0.03
-                        width: 1
-                    }
-                    Latex {
-                        anchors.centerIn: undefined
-                        width: bomd2.width * 0.5
-                        text: "$$
+                Text{
+                    text: "Electrons as quantum particles:"
+                    font.pixelSize: bomd2.contentFont.pixelSize * 0.6
+                }
+                Item {
+                    height: bomd2.height * 0.03
+                    width: 1
+                }
+                Latex {
+                    anchors.centerIn: undefined
+                    width: bomd2.width * 0.5
+                    text: "$$
                                 \\underbrace{
                                 \\left(-\\sum_{i}^{N_e}
                                 \\frac{\\nabla_i^2}{2}
                                 +V_{\\mathrm{Ne}}(\\mathbf{r},\\mathbf{R})\\right)}_{\\mathcal{H}_{\\mathrm{Ne}}}
                                 \\Psi_{\\mathrm{el}} = E_{\\mathrm{Ne}}(\\mathbf{R}) \\Psi_{\\mathrm{el}}
                                 $$"
-                    }
-                    Item {
-                        height: bomd2.height * 0.05
-                        width: 1
-                    }
-                    Text{
-                        text: "Nuclei as classical point particles:"
-                        font.pixelSize: bomd2.contentFont.pixelSize * 0.6
-                    }
-                    Item {
-                        height: bomd2.height * 0.03
-                        width: 1
-                    }
+                }
+                Item {
+                    height: bomd2.height * 0.05
+                    width: 1
+                }
+                Text{
+                    text: "Nuclei as classical point particles:"
+                    font.pixelSize: bomd2.contentFont.pixelSize * 0.6
+                }
+                Item {
+                    height: bomd2.height * 0.03
+                    width: 1
+                }
 
-                    Latex {
-                        anchors.centerIn: undefined
-                        width: bomd2.width * 0.5
-                        text: "	$$
+                Latex {
+                    anchors.centerIn: undefined
+                    width: bomd2.width * 0.5
+                    text: "	$$
                                 M_n  \\ddot{\\mathbf{R}}_n = -\\nabla_n
                                 \\underset{\\Psi_{\\mathrm{el},0}}{\\text{min}}
                                 \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
                                 \\right\\}
                                 $$"
-                    }
                 }
-
-
             }
 
-            LowerRightSlide {
-                Latex{
-                    text: "\\begin{align*}
+
+        }
+
+        LowerRightSlide {
+            Latex{
+                text: "\\begin{align*}
                    V_{\\mathrm{CM}}= \\sum_k^{N} V_1(\\mathbf{R}_k)
                     + \\sum_{k < l}^{N} V_2(\\mathbf{R}_k, \\mathbf{R}_l)
                     &+ \\sum_{k < l < m}^{N} V_3(\\mathbf{R}_k, \\mathbf{R}_l, \\mathbf{R}_m)
@@ -597,8 +597,8 @@ TransitionPresentation
                    \\left\\{\\langle{\\Psi_{\\mathrm{el},0}}|\\mathcal{H}_{\\mathrm{Ne}}|\\Psi_{\\mathrm{el},0}\\rangle
                    \\right\\}
                    \\end{align*}"
-                }
             }
+        }
     }
 
 
@@ -780,16 +780,16 @@ TransitionPresentation
                 }
             }
         ]
-            LowerLeftSlide {
-                Heading {
-                    text: "Spatial Orbitals"
-                }
+        LowerLeftSlide {
+            Heading {
+                text: "Spatial Orbitals"
             }
-            LowerRightSlide {
-                DefaultImage {
-                    source: "../../figures/mo_ao.png"
-                }
+        }
+        LowerRightSlide {
+            DefaultImage {
+                source: "../../figures/mo_ao.png"
             }
+        }
     }
 
 
@@ -800,9 +800,9 @@ TransitionPresentation
 
     Slide {
         delayedContent: [
-        UpperLeftSlide {
-            centeredText: "Which basis set to use?"
-        },
+            UpperLeftSlide {
+                centeredText: "Which basis set to use?"
+            },
             UpperRightSlide {
                 Latex {
                     text: "\\begin{equation*}
@@ -866,53 +866,53 @@ TransitionPresentation
                 centeredText: "Recap"
             },
             UpperRightSlide {
-                    id: bomd1
-                    title: "Ab Initio Molecular Dynamics"
-                    Column {
-                        anchors.centerIn: parent
+                id: bomd1
+                title: "Ab Initio Molecular Dynamics"
+                Column {
+                    anchors.centerIn: parent
 
-                        Text{
-                            text: "Electrons as quantum particles:"
-                            font.pixelSize: bomd1.contentFont.pixelSize * 0.6
-                        }
-                        Item {
-                            height: bomd1.height * 0.03
-                            width: 1
-                        }
-                        Latex {
-                            anchors.centerIn: undefined
-                            width: bomd1.width * 0.5
-                            text: "$$\\underbrace{
+                    Text{
+                        text: "Electrons as quantum particles:"
+                        font.pixelSize: bomd1.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: bomd1.height * 0.03
+                        width: 1
+                    }
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: bomd1.width * 0.5
+                        text: "$$\\underbrace{
                                 \\left(-\\sum_{i}^{N_e}
                                 \\frac{\\nabla_i^2}{2}
                                 +V(\\mathbf{r},\\mathbf{R})\\right)}_{\\mathcal{H}}
                                 \\Psi = E\\Psi
                                 $$"
-                        }
-                        Item {
-                            height: bomd1.height * 0.05
-                            width: 1
-                        }
-                        Text{
-                            text: "Nuclei as classical point particles:"
-                            font.pixelSize: bomd1.contentFont.pixelSize * 0.6
-                        }
-                        Item {
-                            height: bomd1.height * 0.03
-                            width: 1
-                        }
+                    }
+                    Item {
+                        height: bomd1.height * 0.05
+                        width: 1
+                    }
+                    Text{
+                        text: "Nuclei as classical point particles:"
+                        font.pixelSize: bomd1.contentFont.pixelSize * 0.6
+                    }
+                    Item {
+                        height: bomd1.height * 0.03
+                        width: 1
+                    }
 
-                        Latex {
-                            anchors.centerIn: undefined
-                            width: bomd1.width * 0.5
-                            text: "	$$
+                    Latex {
+                        anchors.centerIn: undefined
+                        width: bomd1.width * 0.5
+                        text: "	$$
                                     M_n  \\ddot{\\mathbf{R}}_n = -\\nabla_n
                                     \\underset{\\Psi_{0}}{\\text{min}}
                                     \\left\\{\\langle{\\Psi_{0}}|\\mathcal{H}|\\Psi_{0}\\rangle
                                     \\right\\}
                                     $$"
-                        }
                     }
+                }
 
             },
             LowerLeftSlide {
@@ -1065,6 +1065,124 @@ TransitionPresentation
             }
         ]
     }
+
+
+
+    // -----------------------------------------------
+    // -----------Video-------------------------------
+    // -----------------------------------------------
+    Slide {
+        UpperLeftSlide {
+            title: "Nucleophilic Substitution Reaction"
+        }
+
+        UpperRightSlide {
+            Rectangle {
+                width: parent.width
+                height: parent.height
+                color:"black"
+                Video
+                {
+                    id: video
+                    anchors.fill: parent
+                    source:"../../videos/aout.mp4"
+                    autoPlay:  false
+                    autoLoad:  false
+
+                }
+                Button {
+                    id: button
+                    text: "Play"
+                    anchors {
+                        bottom: parent.bottom
+                    }
+                    onClicked: {
+                        if(video.playbackState === MediaPlayer.StoppedState
+                                || video.playbackState === MediaPlayer.PausedState) {
+                            video.play()
+                        } else {
+                            video.pause()
+                        }
+                    }
+                }
+                Slider{
+                    anchors {
+                        bottom: parent.bottom
+                        left: button.right
+                        right: video.right
+
+                    }
+                    width: parent.width * 0.1
+                    value: video.position
+                    stepSize: 1
+                    minimumValue: 0
+                    maximumValue: video.duration
+                    onPressedChanged: {
+                        if(pressed) {
+                            video.pause()
+                        } else {
+                            video.play()
+                        }
+                    }
+
+                    onValueChanged: video.seek(value)
+                }
+            }
+        }
+    }
+
+
+    // -----------------------------------------------
+    // -----------EP reaction-------------------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                title: "Negative Electrostatic Potential"
+                DefaultImage {
+                    anchors.fill: parent
+                    source: "../../figures/densityCH5.png"
+                }
+            },
+            UpperRightSlide {
+                title: "Atomic Net Charges "
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/charges.png"
+                }
+            }
+        ]
+    }
+
+
+    // -----------------------------------------------
+    // -----------Basis Effect------------------------
+    // -----------------------------------------------
+
+    Slide {
+        delayedContent: [
+            UpperLeftSlide {
+                centeredText:  "The effect of basis set"
+            },
+            UpperRightSlide {
+                title: "BondLengths"
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/ch5Bonds.png"
+                }
+            },
+            LowerRightSlide {
+                title: "Energies"
+                BorderedImage {
+                    anchors.fill: parent
+                    source: "../../figures/ch5Energies.png"
+                }
+            }
+
+        ]
+    }
+
 
 
 
