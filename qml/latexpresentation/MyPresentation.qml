@@ -148,7 +148,7 @@ TransitionPresentation
                     Latex {
                         anchors.centerIn: undefined
                         width: classical.width * 0.3
-                        text: "$$\\Psi(\\mathbf{r}_1,\\mathbf{r}_1,\\dots,\\mathbf{r}_N, t)$$"
+                        text: "$$\\Psi(\\mathbf{r}_1,\\mathbf{r}_2,\\dots,\\mathbf{r}_N, t)$$"
                     }
                 }
             }
@@ -187,11 +187,11 @@ TransitionPresentation
     }
 
     MultiSlide{
-        delayedContent: [
             UpperLeftSlide {
                 title: "Molecular Dynamics:"
                 centeredText: "Laws of Interaction"
-            },
+            }
+            delayedContent: [
             UpperRightSlide {
                 id: lawOfInteraction
                 Column {
@@ -710,87 +710,18 @@ TransitionPresentation
 
 
     MultiSlide{
-        delayedContent: [
-            UpperLeftSlide {
-                Heading {
-                    text: "Spin Orbitals"
-                }
-            },
-            UpperRightSlide {
-                DefaultImage {
-                    source: "../../figures/wavefunction.png"
-                }
-            }
-        ]
-    }
-
-
-    // -----------------------------------------------
-    // ----------------------LCAO---------------------
-    // -----------------------------------------------
-
-
-    MultiSlide{
-        delayedContent: [
-            UpperLeftSlide {
-                Heading {
-                    text: "Linear Combination\nofAtomic Orbitals"
-                }
-            },
-            UpperRightSlide {
-                BorderedImage {
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        bottom: h2omoTitle.top
-                        top: parent.top
-                    }
-                    source: "../../figures/mo_h2o.png"
-                }
-                Latex {
-                    id: h2omoTitle
-                    anchors {
-                        bottom: parent.bottom
-                        centerIn: undefined
-                        horizontalCenter: parent.horizontalCenter
-                    }
-                    width: parent.width * 0.1
-                    text: "H$_2$O"
-                }
-            }
-        ]
-    }
-
-
-
-    // -----------------------------------------------
-    // ----------- Spatial Orbitals-------------------
-    // -----------------------------------------------
-
-    MultiSlide{
         UpperLeftSlide {
             Heading {
                 text: "Spin Orbitals"
             }
         }
-        delayedContent: [
-            UpperRightSlide {
-                DefaultImage {
-                    source: "../../figures/wavefunction.png"
-                }
-            }
-        ]
-        LowerLeftSlide {
-            Heading {
-                text: "Spatial Orbitals"
-            }
-        }
-        LowerRightSlide {
+        UpperRightSlide {
             DefaultImage {
-                source: "../../figures/mo_ao.png"
+                source: "../../figures/wavefunction.png"
             }
         }
     }
+
 
 
 
@@ -939,24 +870,9 @@ TransitionPresentation
                 }
             },
             LowerRightSlide {
-                Grid {
-                    rows: 2
-                    anchors.fill: parent
-
-                    DefaultImage {
-                        width: parent.width
-                        height: parent.height / 2.0
-                        anchors.fill: undefined
-                        source: "../../figures/wavefunction.png"
-                    }
-                    DefaultImage {
-                        width: parent.width
-                        height: parent.height / 3.0
-                        anchors.fill: undefined
-                        source: "../../figures/mo_ao.png"
-                    }
+                DefaultImage {
+                    source: "../../figures/wavefunction.png"
                 }
-
             }
         ]
     }
@@ -1137,51 +1053,17 @@ TransitionPresentation
     // -----------------------------------------------
 
     MultiSlide{
-        delayedContent: [
-            UpperLeftSlide {
-                title: "Negative Electrostatic Potential"
-                DefaultImage {
-                    anchors.fill: parent
-                    source: "../../figures/densityCH5.png"
-                }
-            },
-            UpperRightSlide {
-                title: "Atomic Net Charges "
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../figures/charges.png"
-                }
+        UpperLeftSlide {
+            centeredText: "Negative Electrostatic Potential"
+        }
+        UpperRightSlide {
+            BorderedImage {
+                anchors.fill: parent
+                source: "../../figures/densityCH5.png"
             }
-        ]
+        }
     }
 
-
-    // -----------------------------------------------
-    // -----------Basis Effect------------------------
-    // -----------------------------------------------
-
-    MultiSlide{
-        delayedContent: [
-            UpperLeftSlide {
-                centeredText:  "The effect of basis set"
-            },
-            UpperRightSlide {
-                title: "Bond Lengths"
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../figures/ch5Bonds.png"
-                }
-            },
-            LowerRightSlide {
-                title: "Energies"
-                BorderedImage {
-                    anchors.fill: parent
-                    source: "../../figures/ch5Energies.png"
-                }
-            }
-
-        ]
-    }
 
 
 
