@@ -34,7 +34,7 @@ TransitionPresentation
                     verticalCenterOffset: -parent.height * 0.1
                 }
 
-                text: "Ab Initio Molecular Dyanmics:\nA Virtual Laboratory "
+                text: "Ab Initio Molecular Dynamics:\nA Virtual Laboratory "
             }
             Text {
                 width: parent.width
@@ -168,11 +168,6 @@ TransitionPresentation
                 }
 
             },
-            UpperRightSlide {
-                DefaultImage {
-                    source: "../../figures/MDsvenni.png"
-                }
-            },
             LowerLeftSlide {
                 DefaultImage {
                     source: "../../figures/atomTopoint.png"
@@ -181,6 +176,11 @@ TransitionPresentation
             LowerRightSlide {
                 DefaultImage {
                     source: "../../figures/newton.png"
+                }
+            },
+            UpperRightSlide {
+                DefaultImage {
+                    source: "../../figures/MDsvenni.png"
                 }
             }
         ]
@@ -627,7 +627,7 @@ TransitionPresentation
                 Latex {
                     width: parent.width * 0.5
                     text: "$$
-                            \\langle\\Psi|\\mathcal{H}|\\Psi\\rangle
+                            E = \\langle\\Psi|\\mathcal{H}|\\Psi\\rangle
                             \\ge \\langle\\Psi_{0}|\\mathcal{H}|\\Psi_{0}\\rangle = E_0
                             $$"
                 }
@@ -1166,7 +1166,7 @@ TransitionPresentation
                 centeredText:  "The effect of basis set"
             },
             UpperRightSlide {
-                title: "BondLengths"
+                title: "Bond Lengths"
                 BorderedImage {
                     anchors.fill: parent
                     source: "../../figures/ch5Bonds.png"
